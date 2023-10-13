@@ -6,7 +6,9 @@ const uniqueId = generateUniqueId({
   useLetters: false
 })
 
-const create = () => {}
+const createClient = () => {}
+
+const createPet = () => {}
 
 const index = () => {}
 
@@ -30,7 +32,8 @@ const empty = () => {}
 
 
 module.exports = {
-  create,
+  createClient,
+  createPet,
   index,
   show,
   update,

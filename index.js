@@ -1,6 +1,6 @@
 const {readJSONFile, writeJSONFile} = require('./src/helpers')
 const owners = readJSONFile('./data', 'owners.json')
-const {create, index, show, update, destroy, invoice, empty} = require('./src/ownerController')
+const {createClient, createPet, index, show, update, destroy, invoice, empty} = require('./src/ownerController')
 
 
 
@@ -15,7 +15,10 @@ const run = () => {
     case 'index':
       inform()
       break;
-    case 'create':
+    case 'createClient':
+      inform()
+      break;
+    case 'createPet':
       inform()
       break;
     case 'show':
