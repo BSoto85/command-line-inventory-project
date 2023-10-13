@@ -1,0 +1,35 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": "123 Main St, New York, NY",
+    "phoneNumber": "(555) 123-4567",
+    "ownerId": "57891",
+    "pets": [
+      { "petId": "57891A", "name": "Buddy", "species": "Dog", "age": 3, "gender": "Male", "microchip": true, "intact": false },
+      { "petId": "57891B", "name": "Whiskers", "species": "Cat", "age": 5, "gender": "Female", "microchip": false, "intact": true }
+    ]
+  },
+  {
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "address": "456 Elm St, Los Angeles, CA",
+    "phoneNumber": "(555) 987-6543",
+    "ownerId": "12345",
+    "pets": [
+      { "petId": "12345A", "name": "Lucky", "species": "Dog", "age": 2, "gender": "Male", "microchip": true, "intact": false }
+    ]
+  },
+  {
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "address": "789 Oak St, Chicago, IL",
+    "phoneNumber": "(555) 567-8901",
+    "ownerId": "98765",
+    "pets": [
+      { "petId": "98765A", "name": "Fluffy", "species": "Cat", "age": 4, "gender": "Female", "microchip": true, "intact": false },
+      { "petId": "98765B", "name": "Charlie", "species": "Parrot", "age": 1, "gender": "Male", "microchip": false, "intact": true }
+    ]
+  }
+]
+
