@@ -28,7 +28,10 @@ const run = () => {
     case 'destroy':
       inform()
       break;
-    case 'score':
+    case 'invoice':
+      inform()
+      break;
+    case 'empty':
       inform()
       break;
     default:

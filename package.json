@@ -1,15 +1,21 @@
 {
   "name": "command-line-inventory-app-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "This application is meant to help veterinary offices create, update, and delete owners and their pets from their database. They can also add items to an owner's invoice and empty the invoice",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "index": "node index.js index",
+    "create": "node index.js create",
+    "show": "node index.js show",
+    "update": "node index.js update",
+    "destroy": "node index.js destroy",
+    "invoice": "node index.js invoice",
+    "empty": "node index.js empty"
   },
   "keywords": [],
-  "author": "",
+  "author": "Brenda Soto",
   "license": "ISC",
   "devDependencies": {
-    "nanoid": "^5.0.1"
+    "generate-unique-id": "^2.0.3"
   }
 }
