@@ -1,7 +1,6 @@
 const {readJSONFile, writeJSONFile} = require('./src/helpers')
 const owners = readJSONFile('./data', 'owners.json')
-const {} = require('./src/ownerController')
-
+const {create, index, show, update, destroy, invoice, empty} = require('./src/ownerController')
 
 
 
