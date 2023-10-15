@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "itemId": "A1b2C",
+    "itemName": "Physical Examination",
+    "quantity": "1",
+    "price": "$75.00"
+  },
+  {
+    "itemId": "XyZ45",
+    "itemName": "Vaccinations (Standard)",
+    "quantity": "2",
+    "price": "$45.00"
+  }
+]

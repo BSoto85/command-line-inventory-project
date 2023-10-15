@@ -1,6 +1,7 @@
 const generateUniqueId = require('generate-unique-id');
 const { faker } =  require('@faker-js/faker');
-const services = require('../data/services.json')
+
+
 
 const uniqueId = generateUniqueId({
   length: 5,
@@ -8,7 +9,6 @@ const uniqueId = generateUniqueId({
 })
 
 const inform = console.log
-
 
 
 const create = (owners, ownerName) => {
@@ -75,7 +75,18 @@ const destroy = (owners, ownerId, petName) => {
   }
 }
 
-const invoice = () => {}
+const invoice = (services, cart, itemName, quantity) => {
+  const service = services.find(service => service.itemName === itemName)
+  const item = {
+    itemId: service.itemId,
+    itemName: itemName,
+    quantity: quantity,
+    price: `$${(service.priceInCents/100).toFixed(2)}`
+  }
+  cart.push(item)
+  inform('Service added to invoice.')
+  return cart
+}
 
 const empty = () => {}
 

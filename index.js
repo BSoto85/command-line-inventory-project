@@ -1,5 +1,7 @@
 const {readJSONFile, writeJSONFile} = require('./src/helpers')
 const owners = readJSONFile('./data', 'owners.json')
+const services = readJSONFile('./data', 'services.json')
+const cart = readJSONFile('./data', 'cart.json')
 const {create, index, show, update, destroy, invoice, empty} = require('./src/ownerController')
 
 
@@ -7,32 +9,37 @@ const {create, index, show, update, destroy, invoice, empty} = require('./src/ow
 const inform = console.log
 
 const run = () => {
-  let writeToFile = false
+  let writeToFile1 = false
+  let writeToFile2 = false
   let updatedOwners = []
+  let updatedCart = []
   const action = process.argv[2]
   const owner = process.argv[3]
+  const service = process.argv[3]
   const pet = process.argv[4]
+  const quantity = process.argv[4]
   switch (action) {
     case 'index':
       inform(index(owners))
       break;
     case 'create':
       updatedOwners = create(owners, owner)
-      writeToFile = true
+      writeToFile1 = true
       break;
     case 'show':
       inform(show(owners, owner))
       break;
     case 'update':
       updatedOwners = update(owners, owner, pet, process.argv[5])
-      writeToFile = true
+      writeToFile1 = true
       break;
     case 'destroy':
       updatedOwners = destroy(owners, owner, pet)
-      writeToFile = true
+      writeToFile1 = true
       break;
     case 'invoice':
-      inform()
+      updatedCart = invoice(services, cart, service, quantity)
+      writeToFile2 = true
       break;
     case 'empty':
       inform()
@@ -40,8 +47,11 @@ const run = () => {
     default:
       inform('There was an error.')
   }
-  if(writeToFile) {
+  if(writeToFile1) {
     writeJSONFile('./data', 'owners.json', updatedOwners)
+  }
+  if(writeToFile2) {
+    writeJSONFile('./data', 'cart.json', updatedCart)
   }
 }
 
