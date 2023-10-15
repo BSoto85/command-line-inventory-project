@@ -20,6 +20,7 @@ const create = (owners, ownerName) => {
     pets: []
   }
   owners.push(owner)
+  inform('New owner has been added.')
   return owners
 }
 
@@ -40,7 +41,7 @@ const update = (owners, ownerId, petName, species) => {
   if(owner.pets.length === 0) {
     petId += String.fromCharCode(65)
   } else {
-    petId += String.fromCharCode(65 + owners.pets.length)
+    petId += String.fromCharCode(65 + owner.pets.length)
   }
   const pet = {
       petId: petId,
@@ -53,15 +54,26 @@ const update = (owners, ownerId, petName, species) => {
   }
   owner.pets.push(pet)
   if(owner.pets.map(pet => Object.values(pet).includes(petName))) {
-  inform('Pets successfully updated.')
-  return owner
+    inform('Pets successfully updated.')
+    return owners
   } else {
     inform('Error, pets were not updated.')
-    return owner
+    return owners
   }
 }
 
-const destroy = () => {}
+const destroy = (owners, ownerId, petName) => {
+  const owner = owners.find(owner => owner.ownerId === ownerId)
+  const index = owner.pets.findIndex(pet => pet.name === petName)
+  if(index > -1) {
+    owner.pets.splice(index, 1)
+    inform('Pet successfully removed from owner info.')
+    return owners
+  } else {
+    inform('Pet not found. No action taken.')
+    return owners
+  }
+}
 
 const invoice = () => {}
 

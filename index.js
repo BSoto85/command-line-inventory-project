@@ -11,8 +11,7 @@ const run = () => {
   let updatedOwners = []
   const action = process.argv[2]
   const owner = process.argv[3]
-  const petName = process.argv[4]
-  const species = process.argv[5]
+  const pet = process.argv[4]
   switch (action) {
     case 'index':
       inform(index(owners))
@@ -20,17 +19,17 @@ const run = () => {
     case 'create':
       updatedOwners = create(owners, owner)
       writeToFile = true
-      inform('New owner has been added.')
       break;
     case 'show':
       inform(show(owners, owner))
       break;
     case 'update':
-      updatedOwners = update(owners, owner, petName, species)
+      updatedOwners = update(owners, owner, pet, process.argv[5])
       writeToFile = true
       break;
     case 'destroy':
-      inform()
+      updatedOwners = destroy(owners, owner, pet)
+      writeToFile = true
       break;
     case 'invoice':
       inform()
