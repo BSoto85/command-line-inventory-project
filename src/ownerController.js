@@ -34,7 +34,32 @@ const show = (owners, ownerId) => {
     return `${pet.name}`}).join(', ')}`
 }
 
-const update = () => {}
+const update = (owners, ownerId, petName, species) => {
+  const owner = owners.find(owner => owner.ownerId === ownerId)
+  let petId = owner.ownerId
+  if(owner.pets.length === 0) {
+    petId += String.fromCharCode(65)
+  } else {
+    petId += String.fromCharCode(65 + owners.pets.length)
+  }
+  const pet = {
+      petId: petId,
+      name: petName,
+      species: species,
+      age: faker.number.int({ max: 25 }),
+      sex: faker.person.sex(),
+      microchip: faker.datatype.boolean(),
+      intact: faker.datatype.boolean()
+  }
+  owner.pets.push(pet)
+  if(owner.pets.map(pet => Object.values(pet).includes(petName))) {
+  inform('Pets successfully updated.')
+  return owner
+  } else {
+    inform('Error, pets were not updated.')
+    return owner
+  }
+}
 
 const destroy = () => {}
 
