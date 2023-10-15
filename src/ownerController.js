@@ -25,10 +25,14 @@ const create = (owners, ownerName) => {
 
 const index = owners => {
   return owners.map(owner => `${owner.ownerId} ${owner.fullName}: ${owner.pets.map(pet => {
-    return `${pet.name}`})}`).join('\n')
+    return `${pet.name}`}).join(', ')}`).join('\n')
 }
 
-const show = () => {}
+const show = (owners, ownerId) => {
+  const owner = owners.find(owner => owner.ownerId === ownerId)
+  return `${owner.ownerId} ${owner.fullName}: ${owner.pets.map(pet => {
+    return `${pet.name}`}).join(', ')}`
+}
 
 const update = () => {}
 

@@ -10,18 +10,18 @@ const run = () => {
   let writeToFile = false
   let updatedOwners = []
   const action = process.argv[2]
-  const ownerName = process.argv[3]
+  const owner = process.argv[3]
   switch (action) {
     case 'index':
       inform(index(owners))
       break;
     case 'create':
-      updatedOwners = create(owners, ownerName)
+      updatedOwners = create(owners, owner)
       writeToFile = true
       inform('New owner has been added.')
       break;
     case 'show':
-      inform()
+      inform(show(owners, owner))
       break;
     case 'update':
       inform()
