@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "index": "node index.js index",
-    "client": "node index.js create",
-    "pet": "node index.js pet",
+    "create": "node index.js create",
     "show": "node index.js show",
     "update": "node index.js update",
     "destroy": "node index.js destroy",
@@ -17,6 +16,7 @@
   "author": "Brenda Soto",
   "license": "ISC",
   "devDependencies": {
+    "@faker-js/faker": "^8.2.0",
     "generate-unique-id": "^2.0.3"
   }
 }

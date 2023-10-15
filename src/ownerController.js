@@ -1,4 +1,5 @@
 const generateUniqueId = require('generate-unique-id');
+const { faker } =  require('@faker-js/faker');
 const services = require('../data/services.json')
 
 const uniqueId = generateUniqueId({
@@ -6,11 +7,26 @@ const uniqueId = generateUniqueId({
   useLetters: false
 })
 
-const createClient = () => {}
+const inform = console.log
 
-const createPet = () => {}
 
-const index = () => {}
+
+const create = (owners, ownerName) => {
+  const owner = {
+    ownerId: uniqueId,
+    fullName: ownerName,
+    address: `${faker.location.streetAddress()}, ${faker.location.city()}, ${faker.location.state({ abbreviated: true })} ${faker.location.zipCode()}`,
+    phoneNumber: faker.phone.number(),
+    pets: []
+  }
+  owners.push(owner)
+  return owners
+}
+
+const index = owners => {
+  return owners.map(owner => `${owner.ownerId} ${owner.fullName}: ${owner.pets.map(pet => {
+    return `${pet.name}`})}`).join('\n')
+}
 
 const show = () => {}
 
@@ -32,8 +48,7 @@ const empty = () => {}
 
 
 module.exports = {
-  createClient,
-  createPet,
+  create,
   index,
   show,
   update,

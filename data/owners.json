@@ -1,35 +1,92 @@
 [
   {
-    "firstName": "John",
-    "lastName": "Doe",
-    "address": "123 Main St, New York, NY",
-    "phoneNumber": "(555) 123-4567",
     "ownerId": "57891",
+    "fullName": "John Doe",
+    "address": "123 Main St, New York, NY 10020",
+    "phoneNumber": "555-123-4567",
     "pets": [
-      { "petId": "57891A", "name": "Buddy", "species": "Dog", "age": 3, "gender": "Male", "microchip": true, "intact": false },
-      { "petId": "57891B", "name": "Whiskers", "species": "Cat", "age": 5, "gender": "Female", "microchip": false, "intact": true }
+      {
+        "petId": "57891A",
+        "name": "Buddy",
+        "species": "Dog",
+        "age": 3,
+        "gender": "Male",
+        "microchip": true,
+        "intact": false
+      },
+      {
+        "petId": "57891B",
+        "name": "Whiskers",
+        "species": "Cat",
+        "age": 5,
+        "gender": "Female",
+        "microchip": false,
+        "intact": true
+      }
     ]
   },
   {
-    "firstName": "Jane",
-    "lastName": "Smith",
-    "address": "456 Elm St, Los Angeles, CA",
-    "phoneNumber": "(555) 987-6543",
     "ownerId": "12345",
+    "fullName": "Jane Smith",
+    "address": "456 Elm St, Los Angeles, CA 94245",
+    "phoneNumber": "555-987-6543",
     "pets": [
-      { "petId": "12345A", "name": "Lucky", "species": "Dog", "age": 2, "gender": "Male", "microchip": true, "intact": false }
+      {
+        "petId": "12345A",
+        "name": "Lucky",
+        "species": "Dog",
+        "age": 2,
+        "gender": "Male",
+        "microchip": true,
+        "intact": false
+      }
     ]
   },
   {
-    "firstName": "Alice",
-    "lastName": "Johnson",
-    "address": "789 Oak St, Chicago, IL",
-    "phoneNumber": "(555) 567-8901",
     "ownerId": "98765",
+    "fullName": "Alice Johnson",
+    "address": "789 Oak St, Chicago, IL",
+    "phoneNumber": "555-567-8901",
     "pets": [
-      { "petId": "98765A", "name": "Fluffy", "species": "Cat", "age": 4, "gender": "Female", "microchip": true, "intact": false },
-      { "petId": "98765B", "name": "Charlie", "species": "Parrot", "age": 1, "gender": "Male", "microchip": false, "intact": true }
+      {
+        "petId": "98765A",
+        "name": "Fluffy",
+        "species": "Cat",
+        "age": 4,
+        "gender": "Female",
+        "microchip": true,
+        "intact": false
+      },
+      {
+        "petId": "98765B",
+        "name": "Charlie",
+        "species": "Parrot",
+        "age": 1,
+        "gender": "Male",
+        "microchip": false,
+        "intact": true
+      }
     ]
+  },
+  {
+    "ownerId": "06784",
+    "fullName": "Brenda Soto",
+    "address": "5051 Bode Lights, Mertzmouth, NH 33181",
+    "phoneNumber": "(857) 825-1246 x4871",
+    "pets": []
+  },
+  {
+    "ownerId": "41714",
+    "fullName": "Adam Soto",
+    "address": "4643 Mariano Well, South Lexistad, IN 60269",
+    "phoneNumber": "(210) 665-4800 x23419",
+    "pets": []
+  },
+  {
+    "ownerId": "37342",
+    "fullName": "Ethan Soto",
+    "address": "26544 Grant Street, Port Maida, IN 24102",
+    "phoneNumber": "304-847-3442 x58168",
+    "pets": []
   }
 ]
-

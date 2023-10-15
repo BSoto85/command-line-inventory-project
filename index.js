@@ -1,6 +1,6 @@
 const {readJSONFile, writeJSONFile} = require('./src/helpers')
 const owners = readJSONFile('./data', 'owners.json')
-const {createClient, createPet, index, show, update, destroy, invoice, empty} = require('./src/ownerController')
+const {create, index, show, update, destroy, invoice, empty} = require('./src/ownerController')
 
 
 
@@ -10,16 +10,15 @@ const run = () => {
   let writeToFile = false
   let updatedOwners = []
   const action = process.argv[2]
-  const owner = process.argv[3]
+  const ownerName = process.argv[3]
   switch (action) {
     case 'index':
-      inform()
+      inform(index(owners))
       break;
-    case 'createClient':
-      inform()
-      break;
-    case 'createPet':
-      inform()
+    case 'create':
+      updatedOwners = create(owners, ownerName)
+      writeToFile = true
+      inform('New owner has been added.')
       break;
     case 'show':
       inform()
@@ -40,7 +39,7 @@ const run = () => {
       inform('There was an error.')
   }
   if(writeToFile) {
-    writeJSONFile('./data', 'animals.json', updatedOwners)
+    writeJSONFile('./data', 'owners.json', updatedOwners)
   }
 }
 
