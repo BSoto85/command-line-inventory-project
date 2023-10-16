@@ -1,5 +1,6 @@
 const generateUniqueId = require('generate-unique-id');
 const { faker } =  require('@faker-js/faker');
+const chalk = require('chalk')
 
 
 
@@ -27,7 +28,7 @@ const create = (owners, ownerName) => {
     pets: []
   }
   owners.push(owner)
-  inform('New owner has been added.')
+  inform(chalk.green('New owner has been added.'))
   return owners
 }
 
@@ -61,10 +62,10 @@ const update = (owners, ownerId, petName, species) => {
   }
   owner.pets.push(pet)
   if(owner.pets.map(pet => Object.values(pet).includes(petName))) {
-    inform('Pets successfully updated.')
+    inform(chalk.green('Pets successfully updated.'))
     return owners
   } else {
-    inform('Error, pets were not updated.')
+    inform(chalk.red('Error, pets were not updated.'))
     return owners
   }
 }
@@ -74,10 +75,10 @@ const destroy = (owners, ownerId, petName) => {
   const index = owner.pets.findIndex(pet => pet.name === petName)
   if(index > -1) {
     owner.pets.splice(index, 1)
-    inform('Pet successfully removed from owner info.')
+    inform(chalk.green('Pet successfully removed from owner info.'))
     return owners
   } else {
-    inform('Pet not found. No action taken.')
+    inform(chalk.red('Pet not found. No action taken.'))
     return owners
   }
 }
@@ -91,18 +92,18 @@ const invoice = (services, cart, itemName, quantity) => {
     priceInCents: service.priceInCents
   }
   cart.push(item)
-  inform('Service added to invoice.')
+  inform(chalk.green('Service added to invoice.'))
   return cart
 }
 
 
 const receipt = (owners, ownerId, cart) => {
   const owner = ownerInfo(owners, ownerId)
-  inform(`${owner.ownerId} ${owner.fullName}`)
-  inform('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  inform(lineItem(cart))
-  inform('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  inform(`$${totalPrice(cart)}`)
+  inform(chalk.cyan(`${owner.ownerId} ${owner.fullName}`))
+  inform(chalk.blue('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'))
+  inform(chalk.green(lineItem(cart)))
+  inform(chalk.blue('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'))
+  inform(chalk.yellow(`$${totalPrice(cart)}`))
 }
 
 const empty = cart => {

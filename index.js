@@ -3,6 +3,7 @@ const owners = readJSONFile('./data', 'owners.json')
 const services = readJSONFile('./data', 'services.json')
 const cart = readJSONFile('./data', 'cart.json')
 const {create, index, show, update, destroy, invoice, receipt, empty} = require('./src/ownerController')
+const chalk = require('chalk')
 
 
 
@@ -18,6 +19,7 @@ const run = () => {
   const service = process.argv[3]
   const pet = process.argv[4]
   const quantity = process.argv[4]
+  const species = process.argv[5]
   switch (action) {
     case 'index':
       inform(index(owners))
@@ -27,10 +29,10 @@ const run = () => {
       writeToFile1 = true
       break;
     case 'show':
-      inform(show(owners, owner))
+      inform(chalk.yellow(show(owners, owner)))
       break;
     case 'update':
-      updatedOwners = update(owners, owner, pet, process.argv[5])
+      updatedOwners = update(owners, owner, pet, species)
       writeToFile1 = true
       break;
     case 'destroy':
@@ -49,7 +51,7 @@ const run = () => {
       writeToFile2 = true
       break;
     default:
-      inform('There was an error.')
+      inform(chalk.red('There was an error.'))
   }
   if(writeToFile1) {
     writeJSONFile('./data', 'owners.json', updatedOwners)

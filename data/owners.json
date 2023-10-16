@@ -91,6 +91,15 @@
         "sex": "female",
         "microchip": false,
         "intact": false
+      },
+      {
+        "petId": "06784C",
+        "name": "Gizmo",
+        "species": "Canine",
+        "age": 4,
+        "sex": "female",
+        "microchip": true,
+        "intact": true
       }
     ]
   },
