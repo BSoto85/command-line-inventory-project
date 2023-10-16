@@ -10,13 +10,15 @@
     "update": "node index.js update",
     "destroy": "node index.js destroy",
     "invoice": "node index.js invoice",
-    "empty": "node index.js empty"
+    "empty": "node index.js empty",
+    "receipt": "node index.js receipt"
   },
   "keywords": [],
   "author": "Brenda Soto",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^8.2.0",
+    "chalk": "^5.3.0",
     "generate-unique-id": "^2.0.3"
   }
 }

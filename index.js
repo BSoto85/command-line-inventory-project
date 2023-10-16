@@ -2,7 +2,7 @@ const {readJSONFile, writeJSONFile} = require('./src/helpers')
 const owners = readJSONFile('./data', 'owners.json')
 const services = readJSONFile('./data', 'services.json')
 const cart = readJSONFile('./data', 'cart.json')
-const {create, index, show, update, destroy, invoice, empty} = require('./src/ownerController')
+const {create, index, show, update, destroy, invoice, receipt, empty} = require('./src/ownerController')
 
 
 
@@ -41,8 +41,12 @@ const run = () => {
       updatedCart = invoice(services, cart, service, quantity)
       writeToFile2 = true
       break;
+    case 'receipt':
+      receipt(owners, owner, cart)
+      break;
     case 'empty':
-      inform()
+      updatedCart = empty(cart)
+      writeToFile2 = true
       break;
     default:
       inform('There was an error.')

@@ -11,6 +11,13 @@ const uniqueId = generateUniqueId({
 const inform = console.log
 
 
+const ownerInfo = (owners, ownerId) => owners.find(owner => owner.ownerId === ownerId)
+
+const lineItem = cart => cart.map(item => `${item.itemId}: ${item.itemName}: $${(item.priceInCents/100).toFixed(2)}, qty: ${item.quantity}`).join('\n')
+
+const totalPrice = cart => cart.reduce((acc, cur) => acc + (cur.priceInCents/100).toFixed(2) * cur.quantity, 0)
+
+
 const create = (owners, ownerName) => {
   const owner = {
     ownerId: uniqueId,
@@ -30,13 +37,13 @@ const index = owners => {
 }
 
 const show = (owners, ownerId) => {
-  const owner = owners.find(owner => owner.ownerId === ownerId)
+  const owner = ownerInfo(owners, ownerId)
   return `${owner.ownerId} ${owner.fullName}: ${owner.pets.map(pet => {
     return `${pet.name}`}).join(', ')}`
 }
 
 const update = (owners, ownerId, petName, species) => {
-  const owner = owners.find(owner => owner.ownerId === ownerId)
+  const owner = ownerInfo(owners, ownerId)
   let petId = owner.ownerId
   if(owner.pets.length === 0) {
     petId += String.fromCharCode(65)
@@ -63,7 +70,7 @@ const update = (owners, ownerId, petName, species) => {
 }
 
 const destroy = (owners, ownerId, petName) => {
-  const owner = owners.find(owner => owner.ownerId === ownerId)
+  const owner = ownerInfo(owners, ownerId)
   const index = owner.pets.findIndex(pet => pet.name === petName)
   if(index > -1) {
     owner.pets.splice(index, 1)
@@ -80,15 +87,29 @@ const invoice = (services, cart, itemName, quantity) => {
   const item = {
     itemId: service.itemId,
     itemName: itemName,
-    quantity: quantity,
-    price: `$${(service.priceInCents/100).toFixed(2)}`
+    quantity: parseInt(quantity),
+    priceInCents: service.priceInCents
   }
   cart.push(item)
   inform('Service added to invoice.')
   return cart
 }
 
-const empty = () => {}
+
+const receipt = (owners, ownerId, cart) => {
+  const owner = ownerInfo(owners, ownerId)
+  inform(`${owner.ownerId} ${owner.fullName}`)
+  inform('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+  inform(lineItem(cart))
+  inform('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+  inform(`$${totalPrice(cart)}`)
+}
+
+const empty = cart => {
+  cart.length = 0
+  inform('There are no items on this invoice.')
+  return cart
+}
 
 
 
@@ -106,5 +127,6 @@ module.exports = {
   update,
   destroy,
   invoice,
+  receipt,
   empty
 }
