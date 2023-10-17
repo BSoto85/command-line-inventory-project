@@ -3,6 +3,10 @@
 
 This application is for use in a veterinary setting, allowing clinics to keep track of their clients and their fur-babies.
 
+## Install
+- Clone repository
+- Install npm 
+
 ## Features
 __A user can:__
 - Create an owner with a unique ID, name, address, phone number and pets.
@@ -13,10 +17,6 @@ __A user can:__
 - Add items to an invoice.
 - Print an itemized receipt for an owner with a total for services rendered.
 - Delete all items from an invoice.
-
-## Install
-- clone repository
-- install npm 
 
 ## Run Commands
 

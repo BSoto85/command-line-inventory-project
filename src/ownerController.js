@@ -4,13 +4,7 @@ const chalk = require('chalk')
 
 
 
-const uniqueId = generateUniqueId({
-  length: 5,
-  useLetters: false
-})
-
 const inform = console.log
-
 
 const ownerInfo = (owners, ownerId) => owners.find(owner => owner.ownerId === ownerId)
 
@@ -20,6 +14,10 @@ const totalPrice = cart => cart.reduce((acc, cur) => acc + (cur.priceInCents/100
 
 
 const create = (owners, ownerName) => {
+  const uniqueId = generateUniqueId({
+    length: 5,
+    useLetters: false
+  })
   const owner = {
     ownerId: uniqueId,
     fullName: ownerName,
@@ -46,11 +44,7 @@ const show = (owners, ownerId) => {
 const update = (owners, ownerId, petName, species) => {
   const owner = ownerInfo(owners, ownerId)
   let petId = owner.ownerId
-  if(owner.pets.length === 0) {
-    petId += String.fromCharCode(65)
-  } else {
-    petId += String.fromCharCode(65 + owner.pets.length)
-  }
+  owner.pets.length === 0 ? petId += String.fromCharCode(65) : petId += String.fromCharCode(65 + owner.pets.length)
   const pet = {
       petId: petId,
       name: petName,
