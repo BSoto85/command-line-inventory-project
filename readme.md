@@ -14,6 +14,10 @@ __A user can:__
 - Print an itemized receipt for an owner with a total for services rendered.
 - Delete all items from an invoice.
 
+## Install
+- clone repository
+- install npm 
+
 ## Run Commands
 
 This app uses a number of commands and inputs into the terminal in order to run:
@@ -25,4 +29,4 @@ This app uses a number of commands and inputs into the terminal in order to run:
 - To use the __DESTROY__ function, type in **npm run destroy _ownerID petName_**
 - To use the __INVOICE__ function, type in **npm run invoice _"serviceName" quantity_**
 - To use the __RECEIPT__ function, type in **npm run receipt _ownerID_**
-- To use the __EMPTY__ function, type in **npm run empty**
+- To use the __EMPTY__ function, type in **npm run _empty_**
