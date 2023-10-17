@@ -78,7 +78,6 @@ const destroy = (owners, ownerId, petName) => {
 
 const invoice = (services, cart, itemName, quantity) => {
   const service = services.find(service => service.itemName === itemName)
-  // inform(service)
   if(service === undefined) {
     inform(chalk.red(`Service '${itemName}' cannot be found`))
     return
@@ -90,7 +89,6 @@ const invoice = (services, cart, itemName, quantity) => {
     priceInCents: service.priceInCents
   }
   cart.push(item)
-  // inform('Hello')
   inform(chalk.green('Service added to invoice.'))
   return cart
 }
