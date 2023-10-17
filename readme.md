@@ -10,7 +10,7 @@ This application is for use in a veterinary setting, allowing clinics to keep tr
 ## Features
 __A user can:__
 - Create an owner with a unique ID, name, address, phone number and pets.
-- See a list of all owners in theor database.
+- See a list of all owners in the database.
 - Find one owner by ID and see their info.
 - Update owner info with pets, including the pet's ID, name, species, age, and sex.
 - Delete a single pet from owner info by their pet name.
