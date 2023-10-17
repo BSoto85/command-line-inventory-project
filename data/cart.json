@@ -16,5 +16,17 @@
     "itemName": "Vaccinations (Standard)",
     "quantity": 2,
     "priceInCents": 4500
+  },
+  {
+    "itemId": "Ll7Vp",
+    "itemName": "Heartworm Test",
+    "quantity": 1,
+    "priceInCents": 2500
+  },
+  {
+    "itemId": "Ll7Vp",
+    "itemName": "Heartworm Test",
+    "quantity": 1,
+    "priceInCents": 2500
   }
 ]

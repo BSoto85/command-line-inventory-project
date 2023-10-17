@@ -41,7 +41,8 @@ const run = () => {
       break;
     case 'invoice':
       updatedCart = invoice(services, cart, service, quantity)
-      writeToFile2 = true
+      if(updatedCart === undefined) return
+      else writeToFile2 = true
       break;
     case 'receipt':
       receipt(owners, owner, cart)

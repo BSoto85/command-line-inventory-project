@@ -93,20 +93,20 @@
         "intact": false
       },
       {
-        "petId": "06784C",
-        "name": "Gizmo",
-        "species": "Canine",
-        "age": 4,
-        "sex": "female",
-        "microchip": true,
-        "intact": true
-      },
-      {
         "petId": "06784D",
         "name": "Molly",
         "species": "Canine",
         "age": 3,
         "sex": "male",
+        "microchip": true,
+        "intact": false
+      },
+      {
+        "petId": "06784E",
+        "name": "Gizmo",
+        "species": "Canine",
+        "age": 1,
+        "sex": "female",
         "microchip": true,
         "intact": false
       }
@@ -125,5 +125,22 @@
     "address": "26544 Grant Street, Port Maida, IN 24102",
     "phoneNumber": "304-847-3442 x58168",
     "pets": []
+  },
+  {
+    "ownerId": "30385",
+    "fullName": "Rafael Soto",
+    "address": "388 Mollie Glen, Hanford, VT 01262-9340",
+    "phoneNumber": "899.740.7965",
+    "pets": [
+      {
+        "petId": "30385A",
+        "name": "Goodie",
+        "species": "Canine",
+        "age": 3,
+        "sex": "female",
+        "microchip": true,
+        "intact": true
+      }
+    ]
   }
 ]

@@ -43,8 +43,7 @@ const show = (owners, ownerId) => {
 
 const update = (owners, ownerId, petName, species) => {
   const owner = ownerInfo(owners, ownerId)
-  let petId = owner.ownerId
-  owner.pets.length === 0 ? petId += String.fromCharCode(65) : petId += String.fromCharCode(65 + owner.pets.length)
+  const petId = owner.pets.length === 0 ? 'A' : owner.ownerId + String.fromCharCode(owner.pets[owner.pets.length - 1].petId.charCodeAt(5) + 1)
   const pet = {
       petId: petId,
       name: petName,
@@ -79,6 +78,11 @@ const destroy = (owners, ownerId, petName) => {
 
 const invoice = (services, cart, itemName, quantity) => {
   const service = services.find(service => service.itemName === itemName)
+  // inform(service)
+  if(service === undefined) {
+    inform(chalk.red(`Service '${itemName}' cannot be found`))
+    return
+  }
   const item = {
     itemId: service.itemId,
     itemName: itemName,
@@ -86,6 +90,7 @@ const invoice = (services, cart, itemName, quantity) => {
     priceInCents: service.priceInCents
   }
   cart.push(item)
+  // inform('Hello')
   inform(chalk.green('Service added to invoice.'))
   return cart
 }
