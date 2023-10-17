@@ -108,15 +108,9 @@ const receipt = (owners, ownerId, cart) => {
 
 const empty = cart => {
   cart.length = 0
-  inform('There are no items on this invoice.')
+  inform(chalk.red('There are no items on this invoice.'))
   return cart
 }
-
-
-
-
-
-
 
 
 
