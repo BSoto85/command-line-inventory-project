@@ -43,7 +43,7 @@ const show = (owners, ownerId) => {
 
 const update = (owners, ownerId, petName, species) => {
   const owner = ownerInfo(owners, ownerId)
-  const petId = owner.pets.length === 0 ? 'A' : owner.ownerId + String.fromCharCode(owner.pets[owner.pets.length - 1].petId.charCodeAt(5) + 1)
+  const petId = owner.pets.length === 0 ? owner.ownerId + 'A' : owner.ownerId + String.fromCharCode(owner.pets[owner.pets.length - 1].petId.charCodeAt(5) + 1)
   const pet = {
       petId: petId,
       name: petName,

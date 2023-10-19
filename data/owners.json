@@ -142,5 +142,22 @@
         "intact": true
       }
     ]
+  },
+  {
+    "ownerId": "15458",
+    "fullName": "Ethan Stone Soto",
+    "address": "24092 Bergstrom Expressway, West Sofiaboro, OK 55125",
+    "phoneNumber": "(560) 840-3207 x5887",
+    "pets": [
+      {
+        "petId": "15458A",
+        "name": "Roland",
+        "species": "Canine",
+        "age": 0,
+        "sex": "male",
+        "microchip": false,
+        "intact": false
+      }
+    ]
   }
 ]
